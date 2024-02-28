@@ -1,58 +1,125 @@
 import data from "../data.json" assert { type: "json" };
 
-const imgPetOne = document.querySelector(".pets-katrine");
-const namePetOne = document.querySelector(".name-Katrine");
-const imgPetTwo = document.querySelector(".pets-jennifer");
-const namePetTwo = document.querySelector(".name-Jennifer");
-const imgPetThree = document.querySelector(".pets-woody");
-const namePetThree = document.querySelector(".name-Woody");
+const firstPage = document.querySelector('.first-page');
+const arrowLeft = document.querySelector('.arrow-left');
+const numberPage = document.querySelector('.number-page');
+const arrowRight = document.querySelector('.arrow-right');
+const lastPage = document.querySelector('.last-page');
 
-let index = 0;
+const imgPet = Array.from(
+  document.querySelectorAll('.our-friends__pets__item img')
+);
+const namePet = Array.from(
+  document.querySelectorAll('.our-friends__pets__item p')
+);
 
-function displayPets() {
-  imgPetOne.src = data[index].img;
-  namePetOne.textContent = data[index].name;
+let currentIndex = 0;
 
-  imgPetTwo.src = data[index + 1].img;
-  namePetTwo.textContent = data[index + 1].name;
+function shuffle() {
+  if (numberPage.textContent === '1') {
+    return;
+  }
 
-  imgPetThree.src = data[index + 2].img;
-  namePetThree.textContent = data[index + 2].name;
+  const shuffledIndexes = Array.from({ length: imgPet.length }, (_, index) => index);
+  shuffledIndexes.sort(() => Math.random() - 0.5);
+
+  currentIndex = 0;
+
+  shuffledIndexes.forEach((newIndex, i) => {
+    imgPet[i].src = data[newIndex].img;
+    namePet[i].textContent = data[newIndex].name;
+  });
 }
 
-/////////////////////// Right
+let x = 1;
+numberPage.textContent = x;
 
-const arrowRight = document.querySelector(".arrow-right");
-arrowRight.addEventListener("click", showNextPets);
-
-function showNextPets() {
-  index++;
-  displayPets();
+function numberIncreas() {
+  if (x < 16) {
+    x += 1;
+    numberPage.textContent = x;
+  } else {
+    return;
+  }
+  shuffle();
 }
 
-///////////////////////// Left
-
-const arrowLeft = document.querySelector(".arrow-left");
-arrowLeft.addEventListener("click", showBackPets);
-
-function displayBackPets() {
-  imgPetOne.src = data[index].img;
-  namePetOne.textContent = data[index].name;
-
-  imgPetTwo.src = data[index - 1].img;
-  namePetTwo.textContent = data[index - 1].name;
-
-  imgPetThree.src = data[index - 2].img;
-  namePetThree.textContent = data[index - 2].name;
+function numberDecreas() {
+  if (x > 1) {
+    x -= 1;
+    numberPage.textContent = x;
+  } else {
+    return;
+  }
+  shuffle();
 }
 
-function showBackPets() {
-  index--;
-  displayBackPets();
+arrowRight.addEventListener('click', () => {
+  numberIncreas();
+  changeArrowColor();
+});
+
+arrowLeft.addEventListener('click', () => {
+  numberDecreas();
+  changeArrowColor();
+});
+
+function showLastPage() {
+  if (x === 16) {
+    return;
+  } else {
+    x = 16;
+    numberPage.textContent = x;
+  }
+  shuffle();
 }
 
-//////////////////////////////////// * MODAL
+function showFirstPage() {
+  if (x === 1) {
+    return;
+  } else {
+    x = 1;
+    numberPage.textContent = x;
+  }
+  shuffle();
+}
 
+
+// ... Ваш остальной JavaScript код ...
+
+arrowLeft.addEventListener('click', () => {
+  numberDecreas();
+  changeArrowColor();
+});
+
+
+function changeArrowColor() {
+  if (x !== 1) {
+    arrowLeft.classList.add('active');
+    firstPage.classList.add('active');
+  } else {
+    arrowLeft.classList.remove('active');
+    firstPage.classList.remove('active');
+  }
+}
+
+
+
+firstPage.addEventListener('click', () => {
+  showFirstPage();
+  changeArrowColor();
+});
+
+lastPage.addEventListener('click', () => {
+  showLastPage();
+  changeArrowColor();
+});
+
+// Инициализация при загрузке страницы
+shuffle();
+changeArrowColor();
+
+//////////////////////////////////////////////
 let popup = document.querySelector(".popup");
 let popupContainer = document.querySelector(".popup-container");
 

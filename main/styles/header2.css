@@ -68,7 +68,7 @@ nav li{
     gap: 52px;
     align-items: center;
   }
-  .our-friends__container .our-friends_icon-arrow {
+.our-friends_icon-arrow {
     cursor: pointer;
     display: inline-flex;
     border: 2px solid #F1CDB3;
@@ -81,7 +81,7 @@ nav li{
     transition: 0.4s ease-in-out;
     margin: 20px;
   }
-  .our-friends__container .our-friends_icon-arrow:hover {
+.our-friends_icon-arrow:hover {
     background: #FDDCC4;
     border-color: #FDDCC4;
   }
@@ -125,7 +125,7 @@ nav li{
     margin-bottom: 78px;
     flex-flow: row wrap
   }
-  .our-friends__pets .our-friends__pets__item {
+.our-friends__pets__item {
     cursor: pointer;
   }
   .our-friends__pets div {
@@ -171,7 +171,6 @@ nav li{
     text-align: center;
     align-items: center;
     transition: 0.4s ease-in-out;
-    cursor: pointer;
     background-color: #ffffff;
     border-radius: 100px;
     padding: 15px 20px ;
@@ -279,5 +278,9 @@ footer{
 .mail-icon {
     padding-right: 0px;
 }
+
+
+
+
 
 

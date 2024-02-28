@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/main/styles/main.css" />
     <link rel="stylesheet" href="/main/styles/main2.css" />
     <link rel="stylesheet" href="/main/styles/modal.css" />
-    <link rel="stylesheet" href="/main/styles/poput.css" />
+    <link rel="stylesheet" href="/main/styles/popup.css" />
     <title>Document</title>
   </head>
   <body>
@@ -22,13 +22,13 @@
         <nav class="header__nav">
           <ul class="header__menu">
             <li>
-              <a href="#about" title="About the shelter">
-                About the shelter</a
-              >
+              <a href="#about" title="About the shelter"> About the shelter</a>
             </li>
             <li><a href="#our-friends" title="Our pets"> Our pets</a></li>
             <li>
-              <a href="#help_for-friends" title="Help the shelter"> Help the shelter</a>
+              <a href="#help_for-friends" title="Help the shelter">
+                Help the shelter</a
+              >
             </li>
             <li><a href="#contacts" title="Contacts"> Contacts</a></li>
           </ul>
@@ -111,7 +111,9 @@
                       alt="pets"
                     />
                     <p class="name-Katrine">Katrine</p>
-                    <button class="open-box">Learn more</button>
+                    <div class="open-box">
+                      <button class="katrine">Learn more</button>
+                    </div>
                   </div>
                   <div class="our-friends__pets__item jennifer">
                     <img
@@ -120,7 +122,9 @@
                       alt="pets"
                     />
                     <p class="name-Jennifer">Jennifer</p>
-                    <button class="open-box">Learn more</button>
+                    <div class="open-box">
+                      <button class="jennifer">Learn more</button>
+                    </div>
                   </div>
                   <div class="our-friends__pets__item woody">
                     <img
@@ -129,7 +133,9 @@
                       alt="pets"
                     />
                     <p class="name-Woody">Woody</p>
-                    <button class="open-box">Learn more</button>
+                    <div class="open-box">
+                      <button class="woody">Learn more</button>
+                    </div>
                   </div>
                 </div>
 
@@ -138,33 +144,29 @@
                 </div>
               </div>
               <a href="./index2.html">Get to know the rest</a>
-              
             </div>
 
-
-            
-
-            <div class="poput" id="poput">
-              <div class="poput-container">
-                <div class="poput-container-img">
-                  <img 
-                  class="poput__img"
-                  src="../assets/images/pets-jennifer.png"
-                  alt="pets-katrine"
+            <div class="popup" id="popup">
+              <div class="popup-container">
+                <div class="popup-container-img">
+                  <img
+                    class="popup__img"
+                    src="../assets/images/pets-katrine (1).png"
+                    alt="pets-katrine"
                   />
                 </div>
-                <div class="poput-container-text">
-                  <button class="poput-close">&times;</button>
-                  <h5 class="poput-container-text-name">Jennifer</h5>
-                  <h6 class="poput-container-text-type-breed">
+                <div class="popup-container-text">
+                  <button class="popup-close">&times;</button>
+                  <h5 class="popup-container-text-name">Jennifer</h5>
+                  <h6 class="popup-container-text-type-breed">
                     Dog - Labrador
                   </h6>
                   <p class="poput-container-text-description">
                     Jennifer is a sweet 2 months old Labrador that is patiently
-                  waiting to find a new forever home. This girl really enjoys
-                  being able to go outside to run and play, but won't hesitate
-                  to play up a storm in the house if she has all of her favorite
-                  toys.
+                    waiting to find a new forever home. This girl really enjoys
+                    being able to go outside to run and play, but won't hesitate
+                    to play up a storm in the house if she has all of her
+                    favorite toys.
                   </p>
                   <ul class="popup__container__text__ul">
                     <li>
@@ -187,13 +189,6 @@
                 </div>
               </div>
             </div>
-
-
-
-
-
-
-
           </div>
         </section>
 
@@ -366,3 +361,4 @@
     <script type="module" src="./script.js"></script>
   </body>
 </html>
+

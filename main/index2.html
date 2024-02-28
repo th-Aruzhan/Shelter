@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/main/styles/header2.css"/>
+    <link rel="stylesheet" href="/main/styles/modal.css">
   </head>
   <body>
     <header>
@@ -41,7 +42,7 @@
                     </h2>
       
                     <div class="our-friends__pets">
-                        <div class="our-friends__pets__item katrine">
+                        <div class="our-friends__pets__item katrine" id="katrine1">
                           <img
                             class="pets-katrine"
                             src="../assets/images/pets-katrine.png"
@@ -119,10 +120,56 @@
                         <button class="first-page"><<</button>
                         <button class="arrow-left"><</button>
                         <button class="number-page">1</button>
-                        <button class="arrow-right">>></button>
-                        <button class="last-page">7</button>
+                        <button class="arrow-right">></button>
+                        <button class="last-page">16</button>
                      </div>
                 </div>
+
+                
+                <div class="popup" id="popup">
+                  <div class="popup-container">
+                    <div class="popup-container-img">
+                      <img
+                        class="popup__img"
+                        src="../assets/images/pets-katrine (1).png"
+                        alt="pets-katrine"
+                      />
+                    </div>
+                    <div class="popup-container-text">
+                      <button class="popup-close">&times;</button>
+                      <h5 class="popup-container-text-name">Jennifer</h5>
+                      <h6 class="popup-container-text-type-breed">
+                        Dog - Labrador
+                      </h6>
+                      <p class="poput-container-text-description">
+                        Jennifer is a sweet 2 months old Labrador that is patiently
+                        waiting to find a new forever home. This girl really enjoys
+                        being able to go outside to run and play, but won't hesitate
+                        to play up a storm in the house if she has all of her
+                        favorite toys.
+                      </p>
+                      <ul class="popup__container__text__ul">
+                        <li>
+                          <span class="popup__span-bold">Age:</span>
+                          <span class="popup__pet-age char">2 months</span>
+                        </li>
+                        <li>
+                          <span class="popup__span-bold">Inoculations:</span>
+                          <span class="popup__pet-inoculations char">none</span>
+                        </li>
+                        <li>
+                          <span class="popup__span-bold">Diseases:</span>
+                          <span class="popup__pet-diseases char">none</span>
+                        </li>
+                        <li>
+                          <span class="popup__span-bold">Parasites:</span>
+                          <span class="popup__pet-parasites char">none</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
 
 
               
@@ -198,6 +245,6 @@
 
 
 
-    <script type="module" src="./script.js"></script>
+    <script type="module" src="./pets.js"></script>
   </body>
 </html>
